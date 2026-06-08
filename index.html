@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman | Protofolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <div class="bg-wrapper">
+        <div class="neon-blob blob-1"></div>
+        <div class="neon-blob blob-2"></div>
+    </div>    <div id="lightbox">
+        <span class="close-lightbox" id="close-lightbox-btn">&times;</span>
+        <img src="" id="lightbox-img" alt="Certificate">
+    </div>
+
+
+    <div id="loading-screen">
+        <div class="loader-socials">
+            <div class="loader-icon"><i class="fas fa-code"></i></div>
+            <div class="loader-icon"><i class="far fa-user"></i></div>
+            <div class="loader-icon"><i class="fab fa-github"></i></div>
+        </div>
+        <div class="loader-text">
+            <h1 class="welcome-text minecraft-font">WELCOME TO</h1>
+            <h1 class="mysites-text minecraft-font">MY WEBSITE</h1>
+        </div>
+        <p class="loader-domain">SALMAN ABDURRAHMAN</p>
+        <div class="progress-container"><div class="progress-bar" id="bar"></div></div>
+    </div>
+
+    <div id="main-content" style="opacity: 0; visibility: hidden;">
+        
+        <nav>
+            <div class="logo">salman <span class="logo-gradient">Abdurrahman</span></div>
+            <ul class="nav-links">
+                <div class="nav-indicator"></div>
+                <li><a href="#home" class="active scroll-link">Home</a></li>
+                <li><a href="#about" class="scroll-link">About</a></li>
+                <li><a href="#experience" class="scroll-link">Experience</a></li>
+                <li><a href="#portfolio" class="scroll-link">Portofolio</a></li>
+                <li><a href="#contact" class="scroll-link">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="home" class="section">
+                <div class="home-container">
+                    <div class="home-text">
+                        <span class="badge-innovate"><i class="fas fa-sparkles"></i> Ready to Innovate</span>
+                        <h1 class="hero-title">FullStack<br>Developer</h1>
+                        <div class="typing-wrapper"><span id="typing-text"></span><span class="typing-cursor"></span></div>
+                        <p class="hero-desc">Membantu membangun solusi digital yang inovatif dan kreatif.</p>
+                        
+                        <div class="tech-badges">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Vue</span><span>Dark</span>
+                        </div>
+
+                        <div class="hero-buttons">
+                            <a href="#portfolio" class="btn-primary scroll-link">Projects <i class="fas fa-external-link-alt"></i></a>
+                            <a href="#contact" class="btn-contact-outline scroll-link">Contact <i class="far fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="home-img-wrapper">
+                        <div class="home-img">
+                            <img src="image/logo-porto.png" alt="Hero Illustration">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <p>✨ Transforming ideas into digital experiences ✨</p>
+                </div>
+                
+                <div class="about-container">
+                    <div class="about-text">
+                        <h3>Hello, I'm<br>Salman Abdurrahman Z</h3>
+                        <p>Mahasiswa yang antusias dan berdedikasi dalam pemrograman dengan fokus pada pengembangan web full-stack. Tertarik membangun aplikasi web yang menarik visualnya, responsif, efisien, dan user-friendly. Memiliki pengalaman di HTML, CSS, JavaScript, serta framework modern seperti React, Vue, dan Laravel.</p>
+                        <div class="quote-box">"Leveraging AI as a professional tool, not a replacement."</div>
+                        <div class="about-buttons">
+                            <a href="#" class="btn-purple"><i class="far fa-file-alt"></i> Download CV</a>
+                            <a href="#portfolio" class="btn-outline scroll-link"><i class="fas fa-code"></i> View Projects</a>
+                        </div>
+                    </div>
+                    <div class="about-img-wrapper">
+                        <img src="image/IMG_3314.JPG" alt="Profile">
+                    </div>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"><i class="fas fa-code"></i></div>
+                            <h2>6</h2>
+                        </div>
+                        <div class="stat-body">
+                            <h4>TOTAL PROJECTS</h4>
+                            <p>Innovative web solutions crafted</p>
+                            <i class="fas fa-arrow-right arrow-icon" style="transform: rotate(-45deg);"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"><i class="fas fa-medal"></i></div>
+                            <h2>6</h2>
+                        </div>
+                        <div class="stat-body">
+                            <h4>CERTIFICATES</h4>
+                            <p>Professional skills validated</p>
+                            <i class="fas fa-arrow-right arrow-icon" style="transform: rotate(-45deg);"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                            <h2>12</h2>
+                        </div>
+                        <div class="stat-body">
+                            <h4>Tech Stack</h4>
+                            <p>Continuous learning journey</p>
+                            <i class="fas fa-arrow-right arrow-icon" style="transform: rotate(-45deg);"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section">
+                <div class="experience-section" style="margin-top: 0; width: 100%;">
+                    <div class="experience-header">
+                        <h2>Learning <span>Experience</span></h2>
+                    </div>
+
+                    <!-- Experience Grid (2x2 Layout) -->
+                    <div class="experience-grid">
+                        <!-- Card 1: Fullstack Developer -->
+                        <div class="exp-grid-card" data-exp="fullstack">
+                            <div class="exp-grid-icon"><i class="far fa-building"></i></div>
+                            <div class="exp-grid-content">
+                                <h3>Fullstack Developer</h3>
+                                <h4>Politeknik Negeri Ujung Pandang</h4>
+                                <span class="exp-grid-duration"><i class="far fa-calendar-alt"></i> Agt 2025 - Feb 2026</span>
+                            </div>
+                            <div class="exp-grid-arrow"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+
+                        <!-- Card 2: Frontend Developer -->
+                        <div class="exp-grid-card" data-exp="frontend">
+                            <div class="exp-grid-icon"><i class="far fa-building"></i></div>
+                            <div class="exp-grid-content">
+                                <h3>Frontend Developer</h3>
+                                <h4>Balai Monitor Spektrum Frekuensi Radio Makassar</h4>
+                                <span class="exp-grid-duration"><i class="far fa-calendar-alt"></i> Jan 2025 - Jun 2025</span>
+                            </div>
+                            <div class="exp-grid-arrow"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+
+                        <!-- Card 3: Backend Developer -->
+                        <div class="exp-grid-card" data-exp="backend">
+                            <div class="exp-grid-icon"><i class="fas fa-server"></i></div>
+                            <div class="exp-grid-content">
+                                <h3>Backend Developer</h3>
+                                <h4>SMK Telkom Makassar</h4>
+                                <span class="exp-grid-duration"><i class="far fa-calendar-alt"></i> 2024 - 2025</span>
+                            </div>
+                            <div class="exp-grid-arrow"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+
+                        <!-- Card 4: Mobile Developer -->
+                        <div class="exp-grid-card" data-exp="mobile">
+                            <div class="exp-grid-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="exp-grid-content">
+                                <h3>Mobile Developer</h3>
+                                <h4>SMK Telkom Makassar</h4>
+                                <span class="exp-grid-duration"><i class="far fa-calendar-alt"></i> 2023 - 2024</span>
+                            </div>
+                            <div class="exp-grid-arrow"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Detailed Templates -->
+                    <div class="exp-templates" style="display: none;">
+                        <!-- Fullstack Developer -->
+                        <div class="exp-card" id="exp-detail-fullstack">
+                            <div class="exp-top">
+                                <div class="exp-role-info">
+                                    <div class="exp-icon"><i class="far fa-building"></i></div>
+                                    <div class="exp-role-text">
+                                        <h3>Fullstack Developer</h3>
+                                        <h4>Politeknik Negeri Ujung Pandang</h4>
+                                    </div>
+                                </div>
+                                <div class="exp-meta">
+                                    <p><i class="far fa-calendar-alt"></i> Agt 2025 - Feb 2026</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Moncongloe, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li>Merancang dan membangun arsitektur Fullstack untuk platform E-learning yang memfasilitasi manajemen kursus online, akses materi pembelajaran, dan sistem penilaian kuis.</li>
+                                    <li>Mengintegrasikan database MySQL untuk menyimpan data pengguna, materi kursus, serta hasil kuis penilaian secara aman dan terstruktur.</li>
+                                </ul>
+                                <ul>
+                                    <li>Mengembangkan antarmuka responsif menggunakan Vue.js dan Laravel di sisi backend untuk memastikan pengalaman belajar mengajar yang interaktif.</li>
+                                    <li>Mengoptimalkan performa web and alur caching data guna mengurangi waktu muat halaman kursus bagi ratusan mahasiswa yang mengakses secara bersamaan.</li>
+                                </ul>
+                            </div>
+                            <div class="exp-tech">
+                                <div class="exp-tech-title"><i class="fas fa-code"></i> TEKNOLOGI YANG DIGUNAKAN</div>
+                                <div class="exp-tech-list">
+                                    <span>Vue.js</span><span>Laravel</span><span>Tailwind CSS</span><span>MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frontend Developer -->
+                        <div class="exp-card" id="exp-detail-frontend">
+                            <div class="exp-top">
+                                <div class="exp-role-info">
+                                    <div class="exp-icon"><i class="far fa-building"></i></div>
+                                    <div class="exp-role-text">
+                                        <h3>Frontend Developer</h3>
+                                        <h4>Balai Monitor Spektrum Frekuensi Radio Makassar</h4>
+                                    </div>
+                                </div>
+                                <div class="exp-meta">
+                                    <p><i class="far fa-calendar-alt"></i> Jan 2025 - Jun 2025</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Makassar, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li>Mengembangkan antarmuka web responsif dan mobile-first untuk Sistem Layanan Publik Balai Monitor Spektrum Frekuensi Radio Makassar.</li>
+                                    <li>Mengimplementasikan desain UI/UX modern menggunakan HTML, CSS, JavaScript, dan Bootstrap untuk meningkatkan kenyamanan akses layanan publik.</li>
+                                </ul>
+                                <ul>
+                                    <li>Berkolaborasi aktif dalam sinkronisasi dan integrasi API frontend dengan backend Laravel untuk memastikan pemrosesan formulir yang dinamis.</li>
+                                    <li>Menguji kompatibilitas antar browser secara ketat untuk menjamin fungsionalitas formulir pendaftaran bebas dari hambatan teknis.</li>
+                                </ul>
+                            </div>
+                            <div class="exp-tech">
+                                <div class="exp-tech-title"><i class="fas fa-code"></i> TEKNOLOGI YANG DIGUNAKAN</div>
+                                <div class="exp-tech-list">
+                                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backend Developer -->
+                        <div class="exp-card" id="exp-detail-backend">
+                            <div class="exp-top">
+                                <div class="exp-role-info">
+                                    <div class="exp-icon"><i class="fas fa-server"></i></div>
+                                    <div class="exp-role-text">
+                                        <h3>Backend Developer</h3>
+                                        <h4>SMK Telkom Makassar</h4>
+                                    </div>
+                                </div>
+                                <div class="exp-meta">
+                                    <p><i class="far fa-calendar-alt"></i> 2024 - 2025</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Makassar, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li>Merancang dan mengembangkan RESTful API tangguh untuk mengelola database akademik siswa serta sistem transaksi kasir koperasi sekolah.</li>
+                                    <li>Mengoptimalkan kueri database relational untuk pencarian data siswa yang cepat dan pencatatan riwayat transaksi penjualan yang real-time.</li>
+                                </ul>
+                                <ul>
+                                    <li>Mengimplementasikan sistem autentikasi JWT dan kontrol akses berbasis peran (RBAC) untuk melindungi data sensitif nilai siswa dan operasional kasir.</li>
+                                    <li>Membangun log riwayat penjualan dan laporan keuangan otomatis guna membantu mempermudah audit kasir koperasi sekolah.</li>
+                                </ul>
+                            </div>
+                            <div class="exp-tech">
+                                <div class="exp-tech-title"><i class="fas fa-code"></i> TEKNOLOGI YANG DIGUNAKAN</div>
+                                <div class="exp-tech-list">
+                                    <span>Node.js</span><span>Express.js</span><span>MySQL</span><span>JWT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Developer -->
+                        <div class="exp-card" id="exp-detail-mobile">
+                            <div class="exp-top">
+                                <div class="exp-role-info">
+                                    <div class="exp-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <div class="exp-role-text">
+                                        <h3>Mobile Developer</h3>
+                                        <h4>SMK Telkom Makassar</h4>
+                                    </div>
+                                </div>
+                                <div class="exp-meta">
+                                    <p><i class="far fa-calendar-alt"></i> 2023 - 2024</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> Makassar, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="exp-body">
+                                <ul>
+                                    <li>Membangun aplikasi mobile lintas platform menggunakan framework modern, dengan target platform iOS maupun Android.</li>
+                                    <li>Mengintegrasikan fitur bawaan perangkat seperti kamera, GPS, dan push notification untuk meningkatkan interaksi pengguna.</li>
+                                </ul>
+                                <ul>
+                                    <li>Berkolaborasi erat dengan desainer UI/UX untuk menerjemahkan wireframe dan prototipe menjadi pengalaman mobile yang interaktif dan mulus.</li>
+                                    <li>Menerbitkan dan memelihara aplikasi di Google Play Store dan Apple App Store, serta menangani pembaruan aplikasi dan analitik kerusakan.</li>
+                                </ul>
+                            </div>
+                            <div class="exp-tech">
+                                <div class="exp-tech-title"><i class="fas fa-code"></i> TEKNOLOGI YANG DIGUNAKAN</div>
+                                <div class="exp-tech-list">
+                                    <span>Flutter</span><span>Dart</span><span>Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="section">
+                <div class="section-header">
+                    <h2>Portfolio Showcase</h2>
+                    <p>Explore my journey through projects, certifications, and technical expertise.</p>
+                </div>
+                
+                <div class="tab-control">
+                    <button class="tab-btn active" data-tab="projects"><i class="fas fa-code"></i> Projects</button>
+                    <button class="tab-btn" data-tab="certificates"><i class="fas fa-certificate"></i> Certificates</button>
+                    <button class="tab-btn" data-tab="tech"><i class="fas fa-microchip"></i> Tech Stack</button>
+                </div>
+
+                <div class="tab-wrapper">
+                    <div id="projects" class="tab-content active">
+                        <div class="project-grid">
+                            <div class="project-card">
+                                <img src="image/balmon.png" class="card-img" alt="Balmon Makassar">
+                                <div class="card-content">
+                                    <h3>Balmon Makassar</h3>
+                                    <p>Sistem layanan publik berbasis Laravel yang efisien.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="image/balmon.png" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <button class="btn-details" data-project="balmon">Details <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <img src="image/kasir.png
+                                " class="card-img" alt="S-Kasir">
+                                <div class="card-content">
+                                    <h3>S-Kasir</h3>
+                                    <p>Platform manajemen transaksi yang modern dan cepat.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="https://github.com/salmandera/kasir-telkom" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <button class="btn-details" data-project="kasir">Details <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="image/elearning.png" class="card-img" alt="E-learning">
+                                <div class="card-content">
+                                    <h3>E-learning</h3>
+                                    <p>Platform kursus belajar dan memudahkan anda dalam belajar.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="https://github.com/Silverbullet093/kelompok4-e-learning" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <button class="btn-details" data-project="elearning">Details <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="image/cafe.png" class="card-img" alt="The Moon Cafe">
+                                <div class="card-content">
+                                    <h3>The Moon Cafe</h3>
+                                    <p>E-Menu interaktif dengan estetika malam yang menawan.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="https://github.com/salmandera/themooncafe.github.io" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <button class="btn-details" data-project="mooncafe">Details <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="image/gesture.png" class="card-img" alt="Gesture Tangan">
+                                <div class="card-content">
+                                    <h3>Gesture Tangan</h3>
+                                    <p>Deteksi tangan MediaPipe dengan grafis Three.js secara real-time.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="gesture/gesture.html" target="_blank" class="live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                    <button class="btn-details" data-project="gesture">Details <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <img src="image/porto.png" class="card-img" alt="Portofolio">
+                                <div class="card-content">
+                                    <h3>Portofolio</h3>
+                                    <p>Perjalanan karya, inovasi desain, dan keahlian teknis saya dalam satu ruang interaktif.</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="https://github.com/Silverbullet093/linktree-salman.git" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <button class="btn-details" data-project="porto">Details <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="certificates" class="tab-content">
+                        <div class="project-grid">
+                            <div class="cert-card" data-cert-img="image/041_Salman Abdurrahman.png">
+                                <img src="image/041_Salman Abdurrahman.png" alt="Certificate 1">
+                                <div class="cert-overlay"><div class="zoom-icon"><i class="fas fa-expand"></i></div><h4>View Certificate</h4></div>
+                            </div>
+                            <div class="cert-card" data-cert-img="image/Salman Abdurrahman (1).jpg">
+                                <img src="image/Salman Abdurrahman (1).jpg" alt="Certificate 2">
+                                <div class="cert-overlay"><div class="zoom-icon"><i class="fas fa-expand"></i></div><h4>View Certificate</h4></div>
+                            </div>
+                             <div class="cert-card" data-cert-img="image/Salman Abdurrahman (2)_page-0001.jpg">
+                                <img src="image/Salman Abdurrahman (2)_page-0001.jpg" alt="Certificate 3">
+                                <div class="cert-overlay"><div class="zoom-icon"><i class="fas fa-expand"></i></div><h4>View Certificate</h4></div>
+                            </div>
+                            <div class="cert-card" data-cert-img="image/ukk_page-0001.jpg">
+                                <img src="image/ukk_page-0001.jpg" alt="Certificate 4">
+                                <div class="cert-overlay"><div class="zoom-icon"><i class="fas fa-expand"></i></div><h4>View Certificate</h4></div>
+                            </div>
+                            <div class="cert-card" data-cert-img="image/Salman Abdurrahman_page-0001.jpg">
+                                <img src="image/Salman Abdurrahman_page-0001.jpg" alt="Certificate 5">
+                                <div class="cert-overlay"><div class="zoom-icon"><i class="fas fa-expand"></i></div><h4>View Certificate</h4></div>
+                            </div>
+                            <div class="cert-card" data-cert-img="image/Salman Abdurrahman (3)_page-0001.jpg">
+                                <img src="image/Salman Abdurrahman (3)_page-0001.jpg" alt="Certificate 6">
+                                <div class="cert-overlay"><div class="zoom-icon"><i class="fas fa-expand"></i></div><h4>View Certificate</h4></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tech" class="tab-content">
+                        <div class="tech-grid">
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"><span>HTML</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"><span>CSS</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JS"><span>JavaScript</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind"><span>Tailwind CSS</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React"><span>ReactJS</span></div>
+                            <div class="tech-box"><img src="https://vitejs.dev/logo.svg" alt="Vite"><span>Vite</span></div>
+                            
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="NodeJS"><span>Node JS</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><span>Bootstrap</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"><span>Laravel</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dark"><span>Dark</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="contact-container">
+                    <div class="contact-header">
+                        <h2>Hubungi</h2>
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <p class="contact-desc">Ada yang ingin didiskusikan? Kirim saya pesan dan mari kita bicara.</p>
+                    
+                    <form id="contact-form" action="https://formsubmit.co/keyzzytofficial@gmail.com" method="POST">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_subject" value="Pesan Baru dari Portfolio!">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="form-group">
+                            <i class="far fa-user form-icon"></i>
+                            <input type="text" name="name" placeholder="Nama Anda" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <i class="far fa-envelope form-icon"></i>
+                            <input type="email" name="email" placeholder="Email Anda (cth: test1234@gmail.com)" class="form-input" required 
+                                   pattern="^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$" 
+                                   title="Gunakan email tanpa simbol aneh. Contoh: test1234@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <i class="far fa-comment-dots form-icon" style="top: 20px;"></i>
+                            <textarea name="message" placeholder="Pesan Anda" rows="4" class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send"><i class="far fa-paper-plane"></i> Kirim Pesan</button>
+                    </form>
+                    
+                    <div class="social-section">
+                        <p class="social-title"><span class="line"></span> Connect With Me</p>
+                        <div class="social-grid">
+                            <a href="#" class="social-card"><div class="s-icon"><i class="fab fa-linkedin" style="color:#0077b5;"></i></div><div class="s-text"><strong>Let's Connect</strong><span>on LinkedIn</span></div></a>
+                            <a href="https://instagram.com/_manzzaa06" target="_blank" class="social-card"><div class="s-icon"><i class="fab fa-instagram" style="color:#e4405f;"></i></div><div class="s-text"><strong>Instagram</strong><span>@_manzzaa06</span></div></a>
+                            <a href="https://github.com/salmandera" target="_blank" class="social-card"><div class="s-icon"><i class="fab fa-github" style="color:#fff;"></i></div><div class="s-text"><strong>Github</strong><span>@salmandera</span></div></a>
+                            <a href="#" class="social-card"><div class="s-icon"><i class="fab fa-tiktok" style="color:#25F4EE;"></i></div><div class="s-text"><strong>Tiktok</strong><span>@salmandera</span></div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-line"></div>
+            <p>&copy; 2026 Salman Abdurrahman Z. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="project-detail-page">
+        <div class="detail-container">
+            <div class="breadcrumb">
+                <button class="btn-back" id="close-project-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                <span class="bread-text">Projects <i class="fas fa-chevron-right" style="margin: 0 8px; font-size: 0.7rem;"></i> <span style="color:#fff;" id="bread-title">Project Name</span></span>
+            </div>
+
+            <div class="detail-grid">
+                <div class="detail-left">
+                    <h1 class="detail-title">Judul Project</h1>
+                    <div class="title-line"></div>
+                    <p class="detail-desc">Deskripsi project akan muncul di sini.</p>
+                    
+                    <div class="detail-stats">
+                        <div class="stat-box"><div class="stat-icon"><i class="fas fa-code"></i></div><div class="stat-info"><h3 id="stat-tech">0</h3><p>Total Teknologi</p></div></div>
+                        <div class="stat-box"><div class="stat-icon"><i class="fas fa-layer-group"></i></div><div class="stat-info"><h3 id="stat-feat">0</h3><p>Fitur Utama</p></div></div>
+                    </div>
+
+                    <div class="detail-actions">
+                        <a href="#" class="btn-outline live-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="btn-outline git-btn"><i class="fab fa-github"></i> Github</a>
+                    </div>
+
+                    <div class="tech-used">
+                        <h4><i class="fas fa-code"></i> Technologies Used</h4>
+                        <div class="pills"></div>
+                    </div>
+                </div>
+
+                <div class="detail-right">
+                    <img src="" class="detail-hero-img" alt="Preview Web">
+                    <div class="features-box">
+                        <h4><i class="far fa-star"></i> Key Features</h4>
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Details Popup Modal -->
+    <div id="experience-modal" class="exp-modal">
+        <div class="exp-modal-backdrop"></div>
+        <div class="exp-modal-container">
+            <button class="exp-modal-close" id="close-exp-modal-btn">&times;</button>
+            <div class="exp-modal-content">
+                <!-- Selected detailed exp-card will be cloned here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
