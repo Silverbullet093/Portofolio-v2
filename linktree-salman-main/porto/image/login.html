@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kasir App - Login</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Nunito', sans-serif;
+      background: radial-gradient(ellipse at bottom, #351b1b 0%, #090a0f 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+    .login-box {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      padding: 3rem;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+    .logo-container {
+      margin-bottom: 1.5rem;
+    }
+    .logo-container img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    .logo-container h1 {
+      font-size: 1.8rem;
+      margin: 0;
+      font-weight: bold;
+      color: #fff;
+    }
+    label {
+      color: #fff;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      text-align: left;
+    }
+    input[type="email"],
+    input[type="password"] {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 6px;
+      padding: 0.8rem;
+      color: #fff;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: 2px solid #ff0000;
+    }
+    .btn-primary {
+      background: #a20606;
+      border: none;
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #cc0000;
+    }
+    .register-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    .register-link a {
+      color: #00c3ff;
+      text-decoration: none;
+    }
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <div class="logo-container">
+      <img src="logo1.png" alt="Logo Kasir" />
+      <h1>LOGIN</h1>
+    </div>
+
+    <form id="loginForm">
+    <label for="email">Email Address</label>
+    <input id="email" type="email" required autofocus />
+
+    <label for="password">Password</label>
+    <input id="password" type="password" required />
+
+    <button type="submit" class="btn-primary">
+        Login
+    </button>
+</form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+
+        event.preventDefault();
+
+
+        const emailInput = document.getElementById('email').value;
+        const passwordInput = document.getElementById('password').value;
+
+ 
+        const validEmail = 'salman14@gmail.com';
+        const validPassword = '123456789';
+
+
+        if (emailInput === validEmail && passwordInput === validPassword) {
+            alert('Login Berhasil!');
+            window.location.href = 'index.html'; 
+        } else {
+            alert('Login Gagal! Email atau Password salah.');
+        }
+    });
+</script>
+</body>
+</html>

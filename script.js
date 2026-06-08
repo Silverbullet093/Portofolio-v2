@@ -177,7 +177,7 @@ const projectsData = {
         techs: ['MediaPipe', 'Three.js', 'JavaScript'],
         features: ['Deteksi tangan real-time', 'Integrasi grafis 3D', 'Interaktif'],
         github: 'https://github.com/Silverbullet093/gesture-tangan',
-        demo: 'gesture/gesture.html'
+        demo: 'linktree-salman-main/porto/gesture/gesture.html'
     },
     'porto': {
         title: 'Portofolio',
@@ -189,7 +189,7 @@ const projectsData = {
         techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
         features: ['Desain interaktif', 'Animasi dinamis', 'Responsif'],
         github: 'https://github.com/Silverbullet093/linktree-salman.git',
-        demo: '#'
+        demo: 'linktree-salman-main/index.html'
     }
 };
 
@@ -224,11 +224,38 @@ function closeProjectDetail() {
 
 // 7. LIGHTBOX
 function openLightbox(imgSrc) {
-    document.getElementById('lightbox-img').src = imgSrc;
-    document.getElementById('lightbox').style.display = 'flex';
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    lightboxImg.src = imgSrc;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; 
+    
+    gsap.killTweensOf([lightbox, lightboxImg]);
+    gsap.fromTo(lightbox, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" });
+    gsap.fromTo(lightboxImg, 
+        { opacity: 0, scale: 0.6, y: 30 }, 
+        { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.3)" }
+    );
 }
+
 function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    
+    gsap.killTweensOf([lightbox, lightboxImg]);
+    gsap.to(lightbox, { opacity: 0, duration: 0.3, ease: "power2.in" });
+    gsap.to(lightboxImg, { 
+        opacity: 0, 
+        scale: 0.6, 
+        y: 30,
+        duration: 0.3, 
+        ease: "power2.in",
+        onComplete: () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; 
+        }
+    });
 }
 
 // 8. EXPERIENCE MODAL
@@ -316,10 +343,50 @@ if(contactForm) {
 }
 // Event Listeners for Elements (Migrated from inline onclicks)
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Mobile Navigation Menu Toggle
+    const navToggleBtn = document.getElementById('nav-toggle-btn');
+    const navLinksMenu = document.getElementById('nav-links-menu');
+    
+    if (navToggleBtn && navLinksMenu) {
+        navToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navToggleBtn.classList.toggle('active');
+            navLinksMenu.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        const menuLinks = navLinksMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggleBtn.classList.remove('active');
+                navLinksMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinksMenu.classList.contains('active')) {
+                if (!navLinksMenu.contains(e.target) && !navToggleBtn.contains(e.target)) {
+                    navToggleBtn.classList.remove('active');
+                    navLinksMenu.classList.remove('active');
+                }
+            }
+        });
+    }
+
     // 1. Lightbox
     const closeLightboxBtn = document.getElementById('close-lightbox-btn');
     if (closeLightboxBtn) {
         closeLightboxBtn.addEventListener('click', closeLightbox);
+    }
+
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
     }
     
     document.querySelectorAll('.cert-card').forEach(card => {
@@ -403,4 +470,146 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeElements.forEach(el => {
         scrollObserver.observe(el);
     });
+
+    // 6. Stat Cards Click to Scroll & Switch Tab
+    document.querySelectorAll('.stat-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-target-tab');
+            if (!targetTab) return;
+
+            const portfolioSec = document.getElementById('portfolio');
+            if (portfolioSec) {
+                gsap.to(window, { duration: 0.3, scrollTo: { y: '#portfolio', offsetY: 80 }, ease: "power3.inOut" });
+            }
+
+            const tabBtn = document.querySelector(`.tab-btn[data-tab="${targetTab}"]`);
+            if (tabBtn) {
+                tabBtn.click();
+            }
+        });
+    });
+
+    initTechStackPopups();
 });
+
+// =========================================================
+// 11. TECH STACK POPUPS (SWEETALERT2)
+// =========================================================
+const techDetailsData = {
+    'HTML': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
+        desc: 'HTML (HyperText Markup Language) adalah bahasa markup standar yang digunakan untuk membuat struktur halaman web.',
+        history: 'Diciptakan oleh Tim Berners-Lee pada tahun 1991 untuk memfasilitasi pembagian dokumen ilmiah di CERN.',
+        uses: 'Mendefinisikan elemen-elemen struktur seperti paragraf, judul, gambar, tabel, dan formulir pada halaman web.'
+    },
+    'CSS': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',
+        desc: 'CSS (Cascading Style Sheets) adalah bahasa stylesheet yang digunakan untuk mengatur tampilan visual dan tata letak halaman web.',
+        history: 'Dibuat oleh Håkon Wium Lie pada tahun 1994 untuk memisahkan konten (HTML) dari presentasi visual dokumen web.',
+        uses: 'Mengatur warna, tata letak, font, animasi, serta membuat halaman web menjadi responsif di berbagai perangkat.'
+    },
+    'JavaScript': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+        desc: 'JavaScript adalah bahasa pemrograman dinamis tingkat tinggi yang digunakan untuk membuat halaman web interaktif.',
+        history: 'Diciptakan oleh Brendan Eich di Netscape dalam waktu hanya 10 hari pada tahun 1995 dengan nama awal Mocha.',
+        uses: 'Membuat animasi interaktif, memproses data formulir secara asinkron (AJAX), membangun game web, serta menjalankan logika di sisi client maupun server.'
+    },
+    'Tailwind CSS': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',
+        desc: 'Tailwind CSS adalah framework CSS berbasis utility-first untuk membangun desain antarmuka kustom secara cepat.',
+        history: 'Diciptakan oleh Adam Wathan dan dirilis perdana pada tahun 2017 untuk mempermudah styling tanpa menulis CSS kustom yang berulang.',
+        uses: 'Mempercepat proses desain antarmuka pengguna (UI) langsung di dalam file HTML menggunakan kelas-kelas utilitas siap pakai.'
+    },
+    'ReactJS': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+        desc: 'React adalah library JavaScript open-source yang digunakan untuk membangun antarmuka pengguna berbasis komponen (component-based).',
+        history: 'Dibuat oleh Jordan Walke, seorang software engineer di Facebook, dan dirilis pertama kali pada tahun 2013.',
+        uses: 'Membangun aplikasi web satu halaman (Single Page Applications) yang dinamis, cepat, dan reaktif dengan manajemen state yang efisien.'
+    },
+    'Vite': {
+        icon: 'https://vitejs.dev/logo.svg',
+        desc: 'Vite adalah alat build (build tool) modern yang sangat cepat untuk proyek pengembangan web frontend.',
+        history: 'Dibuat oleh Evan You (pencipta Vue.js) pada tahun 2020 untuk menggantikan bundling konvensional yang lambat seperti Webpack.',
+        uses: 'Menyediakan server pengembangan lokal yang super cepat menggunakan Native ESM dan melakukan bundling produksi yang optimal.'
+    },
+    'Node JS': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+        desc: 'Node.js adalah runtime environment JavaScript open-source yang berjalan di atas engine V8 milik Google Chrome.',
+        history: 'Diciptakan oleh Ryan Dahl pada tahun 2009 untuk memungkinkan eksekusi kode JavaScript di luar browser web (sisi server).',
+        uses: 'Membangun aplikasi backend, RESTful API yang scalable, aplikasi real-time chat, serta mengelola package menggunakan NPM.'
+    },
+    'Bootstrap': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',
+        desc: 'Bootstrap adalah framework CSS frontend open-source paling populer untuk membangun situs web responsif dan mobile-first.',
+        history: 'Dibuat oleh Mark Otto dan Jacob Thornton di Twitter, dirilis sebagai proyek open-source pada tahun 2011.',
+        uses: 'Menyediakan komponen UI siap pakai seperti grid, tombol, form, navbar, dan modal guna mempercepat pengembangan frontend.'
+    },
+    'Laravel': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',
+        desc: 'Laravel adalah framework aplikasi web PHP berbasis arsitektur MVC (Model-View-Controller) yang elegan.',
+        history: 'Diciptakan oleh Taylor Otwell pada tahun 2011 sebagai alternatif yang lebih modern dan kaya fitur dibandingkan CodeIgniter.',
+        uses: 'Mempermudah pembuatan backend aplikasi web yang kompleks, mencakup sistem autentikasi, ORM (Eloquent), antrean, routing, dan keamanan data.'
+    },
+    'Dart': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg',
+        desc: 'Dart adalah bahasa pemrograman client-optimized yang dirancang untuk membangun aplikasi cepat di berbagai platform.',
+        history: 'Dikembangkan oleh Google dan diperkenalkan pertama kali pada tahun 2011 sebagai alternatif dari JavaScript.',
+        uses: 'Digunakan bersama framework Flutter untuk membangun aplikasi mobile (Android/iOS), desktop, dan web dengan basis kode tunggal.'
+    },
+    'Python': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
+        desc: 'Python adalah bahasa pemrograman tingkat tinggi yang menekankan pada keterbacaan kode dan produktivitas pengembang.',
+        history: 'Dibuat oleh Guido van Rossum dan dirilis pertama kali pada tahun 1991 dengan filosofi desain yang sederhana dan intuitif.',
+        uses: 'Pengembangan web (Django/Flask), analisis data, kecerdasan buatan (Machine Learning/AI), otomatisasi scripting, dan komputasi ilmiah.'
+    },
+    'C++': {
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg',
+        desc: 'C++ adalah bahasa pemrograman berorientasi objek yang tangguh dan memberikan kontrol tingkat tinggi atas memori sistem.',
+        history: 'Dikembangkan oleh Bjarne Stroustrup di Bell Labs pada tahun 1979 sebagai perluasan dari bahasa pemrograman C.',
+        uses: 'Pembuatan sistem operasi, game engine 3D, aplikasi desktop performa tinggi, perangkat lunak sistem, dan sistem tertanam (embedded systems).'
+    }
+};
+
+function initTechStackPopups() {
+    document.querySelectorAll('.tech-box').forEach(box => {
+        box.addEventListener('click', function() {
+            const techName = this.querySelector('span').innerText.trim();
+            const data = techDetailsData[techName];
+            if (!data) return;
+
+            const htmlContent = `
+                <div class="swal-tech-content" style="text-align: left; font-family: 'Poppins', sans-serif;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <img src="${data.icon}" style="width: 80px; height: 80px; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.2));" alt="${techName}">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h5 style="color: var(--neon-blue); font-weight: 600; margin-bottom: 5px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><i class="fas fa-info-circle"></i> Penjelasan Singkat</h5>
+                        <p style="margin: 0; font-size: 0.9rem; line-height: 1.6; color: #c9d1d9;">${data.desc}</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h5 style="color: var(--neon-purple); font-weight: 600; margin-bottom: 5px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><i class="fas fa-history"></i> Sejarah Singkat</h5>
+                        <p style="margin: 0; font-size: 0.9rem; line-height: 1.6; color: #c9d1d9;">${data.history}</p>
+                    </div>
+                    <div>
+                        <h5 style="color: #58a6ff; font-weight: 600; margin-bottom: 5px; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;"><i class="fas fa-laptop-code"></i> Kegunaan</h5>
+                        <p style="margin: 0; font-size: 0.9rem; line-height: 1.6; color: #c9d1d9;">${data.uses}</p>
+                    </div>
+                </div>
+            `;
+
+            Swal.fire({
+                title: `<span style="font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.5rem; letter-spacing: 1px; color: #fff;">${techName}</span>`,
+                html: htmlContent,
+                showConfirmButton: true,
+                confirmButtonText: 'Tutup',
+                confirmButtonColor: '#6a11cb',
+                background: '#161b22',
+                color: '#fff',
+                customClass: {
+                    popup: 'swal2-popup',
+                    confirmButton: 'swal2-confirm-button-custom'
+                }
+            });
+        });
+    });
+}

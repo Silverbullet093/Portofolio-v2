@@ -1,0 +1,449 @@
+  /* ====== CSS THEME FANTASI ====== */
+  :root {
+    --primary-glow: #7b2ff7;
+    --secondary-glow: #2bd2ff;
+    --dark-bg: #05060f;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at center, #111827 0%, #05060f 100%);
+}
+
+/* ====== Navigation ====== */
+.navbar {
+    background: rgba(5, 6, 15, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(123, 47, 247, 0.3);
+    padding: 0.8rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo-img { width: 75px; filter: drop-shadow(0 0 5px var(--primary-glow)); }
+.logo-area h1 { font-family: 'Cinzel', serif; font-size: 1.7rem; color: #fff; }
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.0rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--secondary-glow); text-shadow: 0 0 10px var(--secondary-glow); }
+
+/* ====== Sections ====== */
+.section {
+    padding: 100px 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #fff;
+    text-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* ====== Profile Card ====== */
+.profile-card {
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 900px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.profile-img {
+    width: 250px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-glow);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+.profile-text h2 { font-size: 3rem; margin-bottom: 10px; text-align: left; }
+.profile-text p { font-size: 1.1rem; color: #bbb; text-align: left; }
+
+/* ====== Grid & Education Card ====== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.grid-container > div:nth-child(n+10) {
+    display: none;
+}
+
+.education-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.education-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 25px rgba(123, 47, 247, 0.4);
+    background: rgba(123, 47, 247, 0.05);
+}
+
+.education-card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--secondary-glow);
+    filter: drop-shadow(0 0 10px var(--secondary-glow));
+}
+
+/* ====== Fantasy Card (Mahakarya) ====== */
+.fantasy-card {
+    position: relative;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--dark-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr !important; /* Paksa 1 kolom */
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .fantasy-card {
+        height: 280px; /* Pendekkan sedikit di mobile */
+    }
+}
+.card-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) brightness(0.3);
+    transition: 0.6s ease;
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgba(5, 6, 15, 0.95), transparent);
+}
+
+/* Efek Teks Bercahaya */
+.glow-text {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    transition: 0.4s;
+    text-shadow: 0 0 5px #fff, 0 0 10px var(--secondary-glow);
+}
+
+.fantasy-card:hover .card-bg {
+    filter: grayscale(0%) brightness(0.5);
+    transform: scale(1.1);
+}
+
+.fantasy-card:hover {
+    border-color: var(--secondary-glow);
+    box-shadow: 0 0 30px rgba(43, 210, 255, 0.5);
+}
+
+.fantasy-card:hover .glow-text {
+    color: var(--secondary-glow);
+    text-shadow: 0 0 10px #fff, 0 0 20px var(--secondary-glow), 0 0 40px var(--secondary-glow);
+}
+
+.card-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+.fantasy-card:hover .card-actions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-mini {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    background: rgba(123, 47, 247, 0.5);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--primary-glow);
+    backdrop-filter: blur(5px);
+}
+
+.btn-mini:hover {
+    background: var(--primary-glow);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* ====== Tech Stack ====== */
+.tech-icons {
+    font-size: 4rem;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.tech-icons .fa-html5 { 
+    color: #e34c26; 
+    filter: drop-shadow(0 0 10px rgba(227, 76, 38, 0.5)); 
+}
+.tech-icons .fa-css3-alt { 
+    color: #264de4; 
+    filter: drop-shadow(0 0 10px rgba(38, 77, 228, 0.5)); 
+}
+.tech-icons .fa-js-square { 
+    color: #f7df1e; 
+    filter: drop-shadow(0 0 10px rgba(247, 223, 30, 0.5)); 
+}
+.tech-icons .fa-react { 
+    color: #61dbfb; 
+    filter: drop-shadow(0 0 10px rgba(97, 219, 251, 0.5)); 
+}
+.tech-icons .fa-laravel { 
+    color: #ff2d20; 
+    filter: drop-shadow(0 0 10px rgba(255, 45, 32, 0.5)); 
+}
+.tech-icons .fa-node-js { 
+    color: #68a063; 
+    filter: drop-shadow(0 0 10px rgba(104, 160, 99, 0.5)); 
+}
+
+.tech-icons i {
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.tech-icons i:hover {
+    transform: rotate(360deg) scale(1.2);
+    filter: drop-shadow(0 0 20px currentColor); /* currentColor mengikuti warna ikon di atas */
+}
+
+/* ====== Footer ====== */
+footer {
+    padding: 50px;
+    background: #020205;
+    text-align: center;
+    border-top: 1px solid var(--primary-glow);
+}
+
+.social-links {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.social-links a { color: white; margin: 0 15px; transition: 0.3s; }
+.social-links a:hover { color: var(--primary-glow); }
+
+/* ====== MOBILE RESPONSIVE OPTIMIZATION ====== */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 5%;
+        flex-wrap: wrap; /* Biar menu turun ke bawah jika layar sempit */
+    }
+
+    .logo-area {
+        justify-content: center;
+        width: 100%; /* Logo di tengah pada mobile */
+        margin-bottom: 5px;
+    }
+
+    .logo-img {
+        width: 50px; /* Logo lebih kecil di HP */
+    }
+
+    .logo-area h1 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem; /* Perkecil font menu */
+        margin-left: 0;
+        padding: 5px;
+    }
+
+    /* 2. Sections: Padding disesuaikan agar konten tidak terlalu mepet ke pinggir */
+    .section {
+        padding: 80px 20px;
+        min-height: auto; /* Agar tidak terlalu kosong di layar tinggi */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    /* 3. Profile Card: Foto di atas, teks di bawah */
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-text h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .profile-text p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* 4. About Container: Mengurangi padding yang terlalu besar (60px) */
+    .about-container {
+        padding: 30px 20px !important;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* 5. Grid Container: Paksa menjadi 1 kolom di HP */
+    .grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 0;
+    }
+
+    /* 6. Fantasy Card: Tinggi disesuaikan */
+    .fantasy-card {
+        height: 300px;
+    }
+
+    .card-actions {
+        opacity: 1; /* Di HP (touch) sebaiknya tombol selalu muncul */
+        transform: translateY(0);
+    }
+
+    /* 7. Tech Stack: Ikon diperkecil agar tidak berantakan */
+    .tech-icons {
+        font-size: 2.5rem;
+        gap: 20px;
+    }
+
+    /* 8. Footer */
+    footer {
+        padding: 30px 20px;
+    }
+}
+
+/* Update Profile Card Mobile */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        padding: 40px 20px;
+        margin-top: 20px;
+        width: 95%; /* Jangan 100% agar ada jarak di kiri-kanan */
+        gap: 25px;
+    }
+
+    .profile-img {
+        width: 160px; /* Ukuran pas untuk HP */
+        height: 160px;
+    }
+
+    .profile-text h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .profile-text p {
+        text-align: center;
+    }
+    
+    /* Matikan animasi gerak di mobile agar tidak pusing/buggy */
+    .profile-card {
+        animation: none; 
+    }
+}   

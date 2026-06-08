@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Fantasi | Salman Abdurrahman</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header class="navbar">
+        <div class="logo-area">
+            <img src="image/logo-porto.png" alt="Logo" class="logo-img">
+            <h1>PORTOFOLIO</h1>
+        </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="profile-card">
+            <div class="profile-text">
+                <h2>Salman Abdurrahman Z</h2>
+                <p>Web Developer | Mahasiswa PNUP</p>
+                <p>Membantu membangun solusi digital yang inovatif dan kreatif.</p>
+                <a href="#projects" class="btn-primary" style="display:inline-block; margin-top:20px; padding:10px 25px; background:var(--primary-glow); color:white; text-decoration:none; border-radius:50px; font-weight:bold;">Project saya</a>
+            </div>
+            <img src="image/salmander.jpg" alt="Foto Profil" class="profile-img">
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="section">
+            <h2>Tentang Saya</h2>
+            <div class="about-container" style="max-width: 1000px; line-height: 1.8; background: var(--glass-bg); padding: 60px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
+                <p>Saya adalah seorang mahasiswa yang sangat antusias dan berdedikasi dalam dunia pemrograman, dengan fokus khusus pada pengembangan web full-stack.Sejak awal mengenal teknologi, saya selalu tertarik untuk memahami bagaimana membangun aplikasi web yang tidak hanya menarik secara visual, tetapi juga responsif, efisien, dan user-friendly.Saya memiliki pengalaman dan terus mengembangkan kemampuan dalam bahasa pemrograman dasar seperti HTML, CSS, dan JavaScript, serta berbagai framework modern seperti React, Vue, dan Angular yang saya gunakan untuk membuat aplikasi web yang dinamis dan interaktif.
+                </p>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Pendidikan</h2>
+            <div class="grid-container">
+                 <a href="https://smktelkom-mks.sch.id/" target="_blank" class="education-link">
+                    <div class="education-card">
+                        <i class="fas fa-scroll"></i>
+                        <h3>SMK Telkom Makassar</h3>
+                        <p>Rekayasa Perangkat Lunak</p>
+                        <p>2023 - 2025</p>
+                    </div>
+                </a>
+
+                <a href="https://www.poliupg.ac.id/" target="_blank" class="education-link">
+                    <div class="education-card">
+                        <i class="fas fa-university"></i>
+                        <h3>Politeknik Negeri Ujung Pandang</h3>
+                        <p>Teknik Informatika dan Komputer</p>
+                        <p>2025 - 2029</p>
+                    </div>
+                </a>
+
+               
+                <a href="https://unhas.ac.id/" target="_blank" class="education-link">
+                    <div class="education-card">
+                        <i class="fas fa-hat-wizard"></i>
+                        <h3>Universitas Hasanuddin</h3>
+                        <p>Sistem Informasi</p>
+                        <p>Coming Soon</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Project Saya</h2>
+            <div class="grid-container">
+                <div class="fantasy-card" onclick="showPopup('image/balmon.png')">
+                    <div class="card-bg" style="background-image: url('image/balmon.png');"></div>
+                    <div class="card-content">
+                        <i class="fa-solid fa-network-wired" style="font-size: 3rem; color: var(--secondary-glow);"></i>
+                        <h3 class="glow-text">Balmon Makassar</h3>
+                        <p>Sistem layanan publik berbasis Laravel yang efisien.</p>
+                        <div class="card-actions">
+                            <a href="https://github.com/salmandera/linktree-balmonmks" class="btn-mini">Github</a>
+                            <span class="btn-mini"><i class="fas fa-eye"></i> Detail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fantasy-card" onclick="showPopup('image/kasir.png')">
+                    <div class="card-bg" style="background-image: url('image/kasir.png');"></div>
+                    <div class="card-content">
+                        <i class="fa-solid fa-coins" style="font-size: 3rem; color: var(--secondary-glow);"></i>
+                        <h3 class="glow-text">S-Kasir</h3>
+                        <p>Platform manajemen transaksi yang modern dan cepat.</p>
+                        <div class="card-actions">
+                            <a href="https://github.com/salmandera/kasir-telkom" class="btn-mini">Github</a>
+                            <span class="btn-mini"><i class="fas fa-eye"></i> Detail</span>
+                        </div>
+                    </div>
+                </div>
+ <div class="fantasy-card" onclick="showPopup('image/elearning.png')">
+                    <div class="card-bg" style="background-image: url('image/elearning.png');"></div>
+                    <div class="card-content">
+                        <i class="fa-solid fa-laptop-code" style="font-size: 3rem; color: var(--secondary-glow);"></i>
+                        <h3 class="glow-text">E-learning</h3>
+                        <p>platfrom kursus belajar dan memudahkan anda dalam belajar</p>
+                        <div class="card-actions">
+                            <a href="https://github.com/Silverbullet093/kelompok4-e-learning" class="btn-mini">Github</a>
+                            <span class="btn-mini"><i class="fas fa-eye"></i> Detail</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fantasy-card" onclick="showPopup('image/cafe.png')">
+                    <div class="card-bg" style="background-image: url('cafe.png');"></div>
+                    <div class="card-content">
+                        <i class="fa-solid fa-moon" style="font-size: 3rem; color: var(--secondary-glow);"></i>
+                        <h3 class="glow-text">The Moon Cafe</h3>
+                        <p>E-Menu interaktif dengan estetika malam yang menawan.</p>
+                        <div class="card-actions">
+                            <a href="https://github.com/salmandera/themooncafe.github.io" class="btn-mini">Github</a>
+                            <span class="btn-mini"><i class="fas fa-eye"></i> Detail</span>
+                        </div>
+                    </div>
+                </div>
+               
+                
+                <div class="fantasy-card" onclick="showPopup('image/gesture.png')">
+                    <div class="card-bg" style="background-image: url('image/gesture.png');"></div>
+                    <div class="card-content">
+                        <i class="fa-solid fa-fire" style="font-size: 3rem; color: var(--secondary-glow);"></i>
+                        <h3 class="glow-text">Gesture Tangan </h3>
+                        <p>deteksi tangan MediaPipe dengan grafis Three.js secara real-time.</p>
+                        <div class="card-actions">
+                            <a href="https://github.com/Silverbullet093/gesture-tangan" class="btn-mini">Github</a>
+                            <a href="gesture/gesture.html" class="btn-mini" onclick="event.stopPropagation()">demo</a>
+                            <span class="btn-mini"><i class="fas fa-eye"></i> Detail</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fantasy-card" onclick="showPopup('image/porto.png')">
+                    <div class="card-bg" style="background-image: url('image/porto.png');"></div>
+                    <div class="card-content">
+                        <i class="fa-solid fa-dragon" style="font-size: 3rem; color: var(--secondary-glow);"></i>
+                        <h3 class="glow-text">Portofolio </h3>
+                        <p>perjalanan karya, inovasi desain, dan keahlian teknis saya dalam satu ruang interaktif.</p>
+                        <div class="card-actions">
+                            <a href="https://github.com/Silverbullet093/linktree-salman.git" class="btn-mini">Github</a>
+                            <span class="btn-mini"><i class="fas fa-eye"></i> Detail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech-stack" class="section">
+            <h2>Bidang Keahlian</h2>
+            <div class="tech-icons">
+                <i class="fab fa-html5" title="HTML5"></i>
+                <i class="fab fa-css3-alt" title="CSS3"></i>
+                <i class="fab fa-js-square" title="JavaScript"></i>
+                <i class="fab fa-react" title="React"></i>
+                <i class="fab fa-laravel" title="Laravel"></i>
+                <i class="fab fa-node-js" title="Node.js"></i>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Hubungi Saya</h2>
+        <div class="social-links">
+            <a href="mailto:salmanabdurrahman263@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/_manzzaa06/"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/salmandera"><i class="fab fa-github"></i></a>
+        </div>
+        <p>© 2025 Salman Abdurrahman. Dibuat dengan sihir dan kode.</p>
+    </footer>
+
+    <div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:2000;" onclick="closePopup()">
+        <img id="popup-img" src="" style="max-width:85%; max-height:85%; border:2px solid var(--secondary-glow); box-shadow: 0 0 30px var(--secondary-glow);">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -44,7 +44,10 @@
         
         <nav>
             <div class="logo">salman <span class="logo-gradient">Abdurrahman</span></div>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle Menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-links" id="nav-links-menu">
                 <div class="nav-indicator"></div>
                 <li><a href="#home" class="active scroll-link">Home</a></li>
                 <li><a href="#about" class="scroll-link">About</a></li>
@@ -64,7 +67,7 @@
                         <p class="hero-desc">Membantu membangun solusi digital yang inovatif dan kreatif.</p>
                         
                         <div class="tech-badges">
-                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Vue</span><span>Dark</span>
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Vue</span><span>Dart</span>
                         </div>
 
                         <div class="hero-buttons">
@@ -93,7 +96,7 @@
                         <p>Mahasiswa yang antusias dan berdedikasi dalam pemrograman dengan fokus pada pengembangan web full-stack. Tertarik membangun aplikasi web yang menarik visualnya, responsif, efisien, dan user-friendly. Memiliki pengalaman di HTML, CSS, JavaScript, serta framework modern seperti React, Vue, dan Laravel.</p>
                         <div class="quote-box">"Leveraging AI as a professional tool, not a replacement."</div>
                         <div class="about-buttons">
-                            <a href="#" class="btn-purple"><i class="far fa-file-alt"></i> Download CV</a>
+                            <a href="cv.html" target="_blank" class="btn-purple"><i class="far fa-file-alt"></i> Download CV</a>
                             <a href="#portfolio" class="btn-outline scroll-link"><i class="fas fa-code"></i> View Projects</a>
                         </div>
                     </div>
@@ -103,7 +106,7 @@
                 </div>
 
                 <div class="stats-container">
-                    <div class="stat-card">
+                    <div class="stat-card" data-target-tab="projects">
                         <div class="stat-header">
                             <div class="stat-icon"><i class="fas fa-code"></i></div>
                             <h2>6</h2>
@@ -114,7 +117,7 @@
                             <i class="fas fa-arrow-right arrow-icon" style="transform: rotate(-45deg);"></i>
                         </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card" data-target-tab="certificates">
                         <div class="stat-header">
                             <div class="stat-icon"><i class="fas fa-medal"></i></div>
                             <h2>6</h2>
@@ -125,7 +128,7 @@
                             <i class="fas fa-arrow-right arrow-icon" style="transform: rotate(-45deg);"></i>
                         </div>
                     </div>
-                    <div class="stat-card">
+                    <div class="stat-card" data-target-tab="tech">
                         <div class="stat-header">
                             <div class="stat-icon"><i class="fas fa-globe"></i></div>
                             <h2>12</h2>
@@ -351,7 +354,7 @@
                                     <p>Sistem layanan publik berbasis Laravel yang efisien.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="image/balmon.png" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <a href="javascript:void(0)" class="live-demo disabled"><i class="fas fa-external-link-alt"></i> Demo</a>
                                     <button class="btn-details" data-project="balmon">Details <i class="fas fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -364,7 +367,7 @@
                                     <p>Platform manajemen transaksi yang modern dan cepat.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://github.com/salmandera/kasir-telkom" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <a href="javascript:void(0)" class="live-demo disabled"><i class="fas fa-external-link-alt"></i> Demo</a>
                                     <button class="btn-details" data-project="kasir">Details <i class="fas fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -376,7 +379,7 @@
                                     <p>Platform kursus belajar dan memudahkan anda dalam belajar.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://github.com/Silverbullet093/kelompok4-e-learning" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <a href="javascript:void(0)" class="live-demo disabled"><i class="fas fa-external-link-alt"></i> Demo</a>
                                     <button class="btn-details" data-project="elearning">Details <i class="fas fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -388,7 +391,7 @@
                                     <p>E-Menu interaktif dengan estetika malam yang menawan.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://github.com/salmandera/themooncafe.github.io" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <a href="javascript:void(0)" class="live-demo disabled"><i class="fas fa-external-link-alt"></i> Demo</a>
                                     <button class="btn-details" data-project="mooncafe">Details <i class="fas fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -400,7 +403,7 @@
                                     <p>Deteksi tangan MediaPipe dengan grafis Three.js secara real-time.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="gesture/gesture.html" target="_blank" class="live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                    <a href="linktree-salman-main/porto/gesture/gesture.html" target="_blank" class="live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
                                     <button class="btn-details" data-project="gesture">Details <i class="fas fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -412,7 +415,7 @@
                                     <p>Perjalanan karya, inovasi desain, dan keahlian teknis saya dalam satu ruang interaktif.</p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="https://github.com/Silverbullet093/linktree-salman.git" target="_blank" class="live-demo"><i class="fab fa-github"></i> Github</a>
+                                    <a href="linktree-salman-main/index.html" target="_blank" class="live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
                                     <button class="btn-details" data-project="porto">Details <i class="fas fa-arrow-right"></i></button>
                                 </div>
                             </div>
@@ -459,9 +462,9 @@
                             
                             <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="NodeJS"><span>Node JS</span></div>
                             <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><span>Bootstrap</span></div>
-                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"><span>Laravel</span></div>
-                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dark"><span>Dark</span></div>
-                            <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                             <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" alt="Laravel"><span>Laravel</span></div>
+                             <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart"><span>Dart</span></div>
+                             <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
                             <div class="tech-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
                         </div>
                     </div>
@@ -470,11 +473,23 @@
 
             <section id="contact" class="section">
                 <div class="contact-container">
-                    <div class="contact-header">
-                        <h2>Hubungi</h2>
-                        <i class="fas fa-share-alt"></i>
+                    <div class="contact-info">
+                        <div class="contact-header">
+                            <h2>Hubungi</h2>
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <p class="contact-desc">Ada yang ingin didiskusikan? Kirim saya pesan dan mari kita bicara.</p>
+                        
+                        <div class="social-section">
+                            <p class="social-title"><span class="line"></span> Connect With Me</p>
+                            <div class="social-grid">
+                                <a href="#" class="social-card"><div class="s-icon"><i class="fab fa-linkedin" style="color:#0077b5;"></i></div><div class="s-text"><strong>Let's Connect</strong><span>on LinkedIn</span></div></a>
+                                <a href="https://instagram.com/_manzzaa06" target="_blank" class="social-card"><div class="s-icon"><i class="fab fa-instagram" style="color:#e4405f;"></i></div><div class="s-text"><strong>Instagram</strong><span>@_manzzaa06</span></div></a>
+                                <a href="https://github.com/salmandera" target="_blank" class="social-card"><div class="s-icon"><i class="fab fa-github" style="color:#fff;"></i></div><div class="s-text"><strong>Github</strong><span>@salmandera</span></div></a>
+                                <a href="#" class="social-card"><div class="s-icon"><i class="fab fa-tiktok" style="color:#25F4EE;"></i></div><div class="s-text"><strong>Tiktok</strong><span>@salmandera</span></div></a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="contact-desc">Ada yang ingin didiskusikan? Kirim saya pesan dan mari kita bicara.</p>
                     
                     <form id="contact-form" action="https://formsubmit.co/keyzzytofficial@gmail.com" method="POST">
                         <input type="hidden" name="_template" value="table">
@@ -497,16 +512,6 @@
                         </div>
                         <button type="submit" class="btn-send"><i class="far fa-paper-plane"></i> Kirim Pesan</button>
                     </form>
-                    
-                    <div class="social-section">
-                        <p class="social-title"><span class="line"></span> Connect With Me</p>
-                        <div class="social-grid">
-                            <a href="#" class="social-card"><div class="s-icon"><i class="fab fa-linkedin" style="color:#0077b5;"></i></div><div class="s-text"><strong>Let's Connect</strong><span>on LinkedIn</span></div></a>
-                            <a href="https://instagram.com/_manzzaa06" target="_blank" class="social-card"><div class="s-icon"><i class="fab fa-instagram" style="color:#e4405f;"></i></div><div class="s-text"><strong>Instagram</strong><span>@_manzzaa06</span></div></a>
-                            <a href="https://github.com/salmandera" target="_blank" class="social-card"><div class="s-icon"><i class="fab fa-github" style="color:#fff;"></i></div><div class="s-text"><strong>Github</strong><span>@salmandera</span></div></a>
-                            <a href="#" class="social-card"><div class="s-icon"><i class="fab fa-tiktok" style="color:#25F4EE;"></i></div><div class="s-text"><strong>Tiktok</strong><span>@salmandera</span></div></a>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
@@ -568,6 +573,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -1,0 +1,251 @@
+:root {
+    --primary-glow: #7b2ff7;
+    --secondary-glow: #2bd2ff;
+    --dark-bg: #05060f;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at center, #111827 0%, #05060f 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    padding: 40px 20px;
+    text-align: center;
+    z-index: 10;
+    background: rgba(5, 6, 15, 0.6);
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(123, 47, 247, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Profile Section */
+.profile-wrapper {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+}
+
+#profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-glow);
+    z-index: 2;
+    position: relative;
+    transition: 0.5s;
+}
+
+.profile-glow {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--primary-glow);
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.glow-text {
+    text-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--secondary-glow);
+}
+
+p {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-bottom: 35px;
+}
+
+/* Links Section */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fantasy-card {
+    background: rgba(255, 255, 255, 0.03); /* Transparansi ditingkatkan */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(123, 47, 247, 0.3);
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+    margin-bottom: 5px;
+}
+
+.glow-line {
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent
+    );
+    transition: 0.8s ease-in-out;
+}
+
+.fantasy-card:hover {
+    transform: translateY(-8px) scale(1.03); /* Card naik lebih tinggi */
+    background: rgba(123, 47, 247, 0.15); /* Background saat hover lebih ungu */
+    
+    /* Box Shadow Berlapis (Sangat Terang) */
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.5),          /* Bayangan gelap dasar */
+        0 0 30px rgba(123, 47, 247, 0.6),        /* Glow ungu tengah */
+        0 0 60px rgba(43, 210, 255, 0.4),        /* Glow biru luar */
+        inset 0 0 15px rgba(255, 255, 255, 0.2); /* Cahaya di tepi dalam */
+    
+    border-color: var(--secondary-glow); /* Border berubah jadi biru neon */
+}
+
+.fantasy-card:hover .glow-line {
+    left: 150%;
+}
+.fantasy-card:hover .icon {
+    color: #fff;
+    filter: drop-shadow(0 0 15px var(--secondary-glow)) drop-shadow(0 0 30px var(--primary-glow));
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* Teks pada card saat hover */
+.fantasy-card:hover .text {
+    color: #fff;
+    text-shadow: 0 0 10px var(--secondary-glow);
+}
+.icon {
+    font-size: 1.4rem;
+    width: 40px;
+    color: var(--secondary-glow);
+    filter: drop-shadow(0 0 5px var(--secondary-glow));
+}
+
+.text {
+    flex-grow: 1;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.arrow {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.fantasy-card:hover .arrow {
+    opacity: 1;
+    transform: translateX(5px);
+    color: var(--secondary-glow);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+footer span {
+    color: var(--primary-glow);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Untuk layar tablet atau layar yang lebih kecil dari 600px */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%; /* Lebih lebar sedikit agar ruang tidak terbuang */
+        padding: 30px 15px;
+        border-radius: 20px; /* Radius lebih kecil di HP agar tidak terlalu membulat */
+    }
+
+    .profile-wrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    h1 {
+        font-size: 1.25rem; /* Ukuran teks nama dikecilkan */
+        letter-spacing: 2px;
+    }
+
+    .fantasy-card {
+        padding: 15px 20px; /* Padding kartu dipersempit agar hemat ruang */
+    }
+    
+    .text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Untuk layar HP yang sangat kecil (contoh: iPhone SE atau Galaxy Fold) */
+@media screen and (max-width: 360px) {
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    .profile-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+
+    .icon {
+        font-size: 1.1rem;
+        width: 30px;
+    }
+}
+
+/* Memastikan partikel tetap memenuhi layar saat rotasi perangkat */
+canvas.particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
