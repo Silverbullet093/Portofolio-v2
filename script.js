@@ -343,6 +343,18 @@ if(contactForm) {
 }
 // Event Listeners for Elements (Migrated from inline onclicks)
 document.addEventListener('DOMContentLoaded', () => {
+    // 0.1 Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            initNavIndicator();
+        });
+    }
+
     // 0. Mobile Navigation Menu Toggle
     const navToggleBtn = document.getElementById('nav-toggle-btn');
     const navLinksMenu = document.getElementById('nav-links-menu');

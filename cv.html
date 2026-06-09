@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Salman Abdurrahman Z</title>
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -32,6 +36,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        html[data-theme="dark"] body {
+            background-color: #05070a;
+        }
+        html[data-theme="light"] body {
+            background-color: #cbd5e1;
         }
 
         /* Print Button */
@@ -411,7 +423,6 @@
         @media (max-width: 768px) {
             body {
                 padding: 10px 0;
-                background-color: #cbd5e1;
             }
             .no-print-zone {
                 width: 95%;
